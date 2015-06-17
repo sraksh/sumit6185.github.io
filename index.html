@@ -36,6 +36,7 @@
 			<div class="container">
 			 <ul id="todo-list" ng-repeat="task in taskList track by $index">
 			    <li>
+		    <input type="checkbox" name="checkbox" ng-model="task.completed"  />
                     <button class="btn btn-success" ng-show="!task.editing" ng-click="Edit($index)" >Edit</button>
     		    <span class="completed-{{task.completed}}">{{task.name}}</span>
                     <button class="btn btn-danger" style="position: absolute; right: 20px;" ng-show="!task.editing"  ng-click="deleteTask(taskList.indexOf(task))">Delete</button>
