@@ -19,7 +19,6 @@ angular.module('myTask', [])
     $scope.Save = function(index)                                                   //Saving done here
     {
         $scope.taskList[index].editing = false;
-         $scope.taskList.splice(index, 1, taskList);  
-    };
+       };
 
 }])
