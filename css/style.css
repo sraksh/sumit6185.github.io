@@ -1,0 +1,33 @@
+body {
+	font-size: 14px;
+	color: #333333;
+	width: 94%;
+	margin: 0 auto;
+}
+
+.heading{
+	margin-top: 40px;
+	border-bottom: 2px solid #cccccc;
+	margin-bottom: 60px;
+}
+
+#todo-list {
+	margin: 10px 0;
+	padding: 0;
+	background-color: #eee;
+	list-style: none;
+	border-radius: 10px;
+	font-size: 100%;
+}
+
+#todo-list:hover{
+	background-color: rgba(0,0,0,0.2);
+	position: relative;
+}
+
+#todo-list li {
+	padding: 10px 15px 10px 25px;
+	position: relative;
+	
+	
+}
