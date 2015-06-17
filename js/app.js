@@ -3,7 +3,7 @@ angular.module('myTask', [])
 .controller('myCtrl', ['$scope', function($scope, $http) {
     $scope.taskList = [];
         $scope.addTask = function() {                                           //addding done here
-        $scope.taskList.push({name:$scope.taskName, done:false});
+        $scope.taskList.push({name:$scope.taskName,"completed":false});
         $scope.taskName = "";
     };
     
