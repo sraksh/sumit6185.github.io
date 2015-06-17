@@ -24,6 +24,15 @@ body {
 	background-color: rgba(0,0,0,0.2);
 	position: relative;
 }
+#todo-list li .completed-true  {
+    color: #111;
+    margin-left: 30px;
+    text-decoration: line-through;
+}
+
+#todo-list li .completed-false  {
+    margin-left: 30px;
+}
 
 #todo-list li {
 	padding: 10px 15px 10px 25px;
