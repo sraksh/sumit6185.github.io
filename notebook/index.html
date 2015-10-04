@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Online Notebook</title>
+    <!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link href="css/jquery.booklet.latest.css" type="text/css" rel="stylesheet" media="screen, projection, tv" />
+    <link href="css/custom.css" type="text/css" rel="stylesheet"/>
+    
+</head>
+<body>
+    <header>
+        <h1>The Online Notebook</h1>
+    </header>
+    <section>
+        <div id="mybook">
+            <div  id="edit1" contenteditable="true">
+                <h3>Page 1</h3><h5>Just a dummy text on page 1</h5>
+            </div>
+            <div id="edit2" contenteditable="true">
+                <h3>Page 2</h3><h5>Just a dummy text on page 2</h5>
+            </div>
+            <div id="edit3" contenteditable="true">
+                <h3>Page 3</h3><h5>Just a dummy text on page 3</h5>
+            </div>
+            <div id="edit4" contenteditable="true">
+                <h3>Page 4</h3><h5>Just a dummy text on page 4</h5>
+            </div>
+            
+        </div>
+        
+    </section>
+    
+    <footer>
+    <input type="button" id="custom-add-end" value="Add Page"/>
+    <input type="button"  value="Save Edits" id="save" onclick="save()"/>
+    <input type="button"  value="Load Edits" id="load" onclick="load()"/>
+     </footer>
+
+
+
+ 
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script> window.jQuery || document.write('<script src="js/jquery-2.1.0.min.js"><\/script>') </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script> window.jQuery.ui || document.write('<script src="js/jquery-ui-1.10.4.min.js"><\/script>') </script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.booklet.latest.js"></script>
+
+    <script>
+        $(function() {
+         $('#mybook').booklet({
+            closed: true,
+            speed: 300
+
+        });
+
+            // event type binding
+            $("#mybook").bind("bookletadd", function(event, data) {
+                alert('page added! page html: '+ data.page.outerHTML);
+            });
+            
+            $('#custom-add-end').click(function(e){
+                e.preventDefault();
+                $('#mybook').booklet("add", "end", "<div id=\"newpage\"><h3>I'm a new page!</h3></div>");
+                $('#newpage').attr('contenteditable','true');
+            });
+
+     });
+    </script>
+
+
+
+<script>
+    
+    function save() {
+    //get the editable element
+    var editElem1 = document.getElementById("edit1");
+    var editElem2 = document.getElementById("edit2");
+    var editElem3 = document.getElementById("edit3");
+    var editElem4 = document.getElementById("edit4");
+   // var newPage = document.getElementById("newpage");
+
+    //get the edited element content
+    var userVersion1 = editElem1.innerHTML;
+    var userVersion2 = editElem2.innerHTML;
+    var userVersion3 = editElem3.innerHTML;
+    var userVersion4 = editElem4.innerHTML;
+   
+    //save the content to local storage
+    localStorage.userEdits1 = userVersion1;
+    localStorage.userEdits2 = userVersion2;
+    localStorage.userEdits3 = userVersion3;
+    localStorage.userEdits4 = userVersion4;
+   // localStorage.setItem('newpage',newPage);
+    alert("Saved to local storage."); 
+    } 
+
+    function load() {
+        if(localStorage.userEdits1!=null && localStorage.userEdits2!=null && localStorage.userEdits3!=null && localStorage.userEdits4!=null)
+        document.getElementById("edit1").innerHTML = localStorage.userEdits1;
+        document.getElementById("edit2").innerHTML = localStorage.userEdits2;
+        document.getElementById("edit3").innerHTML = localStorage.userEdits3;
+        document.getElementById("edit4").innerHTML = localStorage.userEdits4;
+      //  document.getElementById("newpage").innerHTML = localStorage.getItem("newpage"));
+        alert("loaded !!!")
+    }
+   
+
+    </script>
+</body>
+</html>
