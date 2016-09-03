@@ -1,0 +1,133 @@
+.container {
+    width: 800px;
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    perspective: 2000px;
+}
+
+#title {
+    position: absolute;
+    top: 135px;
+    left: 310px;
+    z-index: 2;
+    background-color: white;
+    opacity: 0.6;
+    color: black;
+    padding: 15px;
+    font-family: sans-serif;
+    font-size: 1.6em;
+    border-radius: 15px;
+}
+
+#imgSlider {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+#imgSlider img {
+    transition: 0.5s;
+    margin: 0;
+    display: block;
+    position: absolute;
+    width: 800px;
+    height: 400px;
+}
+
+#imgSlider img:nth-child(1) {
+    transform: translateZ(551px);
+}
+
+#imgSlider img:nth-child(2) {
+    transform: rotateY( 72deg) translateZ(551px);
+}
+
+#imgSlider img:nth-child(3) {
+    transform: rotateY( 144deg) translateZ(551px);
+}
+
+#imgSlider img:nth-child(4) {
+    transform: rotateY( 216deg) translateZ(551px);
+}
+
+#imgSlider img:nth-child(5) {
+    transform: rotateY(288deg) translateZ(551px);
+}
+
+.prev {
+    height: 128px;
+    width: 128px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+}
+
+.next {
+    height: 128px;
+    width: 128px;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+
+#left {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 150px;
+    left: 0;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+}
+
+#left:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+#right {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 150px;
+    right: 0;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+}
+
+#right:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+ol {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    z-index: 15;
+    width: 60%;
+    padding-left: 0;
+    margin-left: -30%;
+    text-align: center;
+    list-style: none;
+}
+
+li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 1px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+
+li:hover {
+    background-color: #fff;
+}
